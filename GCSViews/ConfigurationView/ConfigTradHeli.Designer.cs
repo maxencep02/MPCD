@@ -58,6 +58,9 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             this.label43 = new System.Windows.Forms.Label();
             this.HS4_TRIM = new System.Windows.Forms.NumericUpDown();
             this.label44 = new System.Windows.Forms.Label();
+            this.HS6_TRIM = new System.Windows.Forms.NumericUpDown();
+            this.HS5_TRIM = new System.Windows.Forms.NumericUpDown();
+            this.HS4_TRIM = new System.Windows.Forms.NumericUpDown();
             this.HS3_TRIM = new System.Windows.Forms.NumericUpDown();
             this.HS2_TRIM = new System.Windows.Forms.NumericUpDown();
             this.HS1_TRIM = new System.Windows.Forms.NumericUpDown();
@@ -73,6 +76,9 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             this.H_SV3_POS = new System.Windows.Forms.TextBox();
             this.H_SV2_POS = new System.Windows.Forms.TextBox();
             this.H_SV1_POS = new System.Windows.Forms.TextBox();
+            this.HS6_REV = new System.Windows.Forms.CheckBox();
+            this.HS5_REV = new System.Windows.Forms.CheckBox();
+            this.HS4_REV = new System.Windows.Forms.CheckBox();
             this.HS3_REV = new System.Windows.Forms.CheckBox();
             this.HS2_REV = new System.Windows.Forms.CheckBox();
             this.HS1_REV = new System.Windows.Forms.CheckBox();
@@ -147,6 +153,8 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             ((System.ComponentModel.ISupportInitialize)(this.mavlinkNumericUpDowntailspeed)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HS6_TRIM)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HS5_TRIM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HS4_TRIM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HS3_TRIM)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.HS2_TRIM)).BeginInit();
@@ -387,6 +395,69 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             resources.ApplyResources(this.label44, "label44");
             this.label44.Name = "label44";
             // 
+            // HS6_TRIM
+            // 
+            resources.ApplyResources(this.HS6_TRIM, "HS6_TRIM");
+            this.HS6_TRIM.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.HS6_TRIM.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.HS6_TRIM.Name = "HS6_TRIM";
+            this.HS6_TRIM.Value = new decimal(new int[] {
+            1500,
+            0,
+            0,
+            0});
+            this.HS6_TRIM.ValueChanged += new System.EventHandler(this.HS6_TRIM_ValueChanged);
+            // 
+            // HS5_TRIM
+            // 
+            resources.ApplyResources(this.HS5_TRIM, "HS5_TRIM");
+            this.HS5_TRIM.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.HS5_TRIM.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.HS5_TRIM.Name = "HS5_TRIM";
+            this.HS5_TRIM.Value = new decimal(new int[] {
+            1500,
+            0,
+            0,
+            0});
+            this.HS5_TRIM.ValueChanged += new System.EventHandler(this.HS5_TRIM_ValueChanged);
+            // 
+            // HS4_TRIM
+            // 
+            resources.ApplyResources(this.HS4_TRIM, "HS4_TRIM");
+            this.HS4_TRIM.Maximum = new decimal(new int[] {
+            2000,
+            0,
+            0,
+            0});
+            this.HS4_TRIM.Minimum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
+            this.HS4_TRIM.Name = "HS4_TRIM";
+            this.HS4_TRIM.Value = new decimal(new int[] {
+            1500,
+            0,
+            0,
+            0});
+            this.HS4_TRIM.ValueChanged += new System.EventHandler(this.HS4_TRIM_ValueChanged);
+            //
             // HS3_TRIM
             // 
             resources.ApplyResources(this.HS3_TRIM, "HS3_TRIM");
@@ -513,6 +584,24 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             this.H_SV1_POS.Name = "H_SV1_POS";
             this.H_SV1_POS.Validating += new System.ComponentModel.CancelEventHandler(this.TXT_srvpos1_Validating);
             // 
+            // HS6_REV
+            // 
+            resources.ApplyResources(this.HS6_REV, "HS6_REV");
+            this.HS6_REV.Name = "HS6_REV";
+            this.HS6_REV.UseVisualStyleBackColor = true;
+            this.HS6_REV.CheckedChanged += new System.EventHandler(this.HS6_REV_CheckedChanged);            // 
+            // HS5_REV
+            // 
+            resources.ApplyResources(this.HS5_REV, "HS5_REV");
+            this.HS5_REV.Name = "HS5_REV";
+            this.HS5_REV.UseVisualStyleBackColor = true;
+            this.HS5_REV.CheckedChanged += new System.EventHandler(this.HS5_REV_CheckedChanged);            // 
+            // HS4_REV
+            // 
+            resources.ApplyResources(this.HS4_REV, "HS4_REV");
+            this.HS4_REV.Name = "HS4_REV";
+            this.HS4_REV.UseVisualStyleBackColor = true;
+            this.HS4_REV.CheckedChanged += new System.EventHandler(this.HS4_REV_CheckedChanged);            // 
             // HS3_REV
             // 
             resources.ApplyResources(this.HS3_REV, "HS3_REV");
@@ -1275,6 +1364,9 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.HS6_TRIM);
+            this.Controls.Add(this.HS5_TRIM);
+            this.Controls.Add(this.HS4_TRIM);
             this.Controls.Add(this.HS3_TRIM);
             this.Controls.Add(this.HS2_TRIM);
             this.Controls.Add(this.HS1_TRIM);
@@ -1290,6 +1382,9 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             this.Controls.Add(this.H_SV3_POS);
             this.Controls.Add(this.H_SV2_POS);
             this.Controls.Add(this.H_SV1_POS);
+            this.Controls.Add(this.HS6_REV);
+            this.Controls.Add(this.HS5_REV);
+            this.Controls.Add(this.HS4_REV);
             this.Controls.Add(this.HS3_REV);
             this.Controls.Add(this.HS2_REV);
             this.Controls.Add(this.HS1_REV);
@@ -1309,6 +1404,8 @@ namespace MissionPlanner.GCSViews.ConfigurationView
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.HS6_TRIM)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.HS5_TRIM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HS4_TRIM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HS3_TRIM)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.HS2_TRIM)).EndInit();
@@ -1372,6 +1469,9 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         private System.Windows.Forms.TextBox HS4_MIN;
         private System.Windows.Forms.TextBox HS4_MAX;
         private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.NumericUpDown HS6_TRIM;
+        private System.Windows.Forms.NumericUpDown HS5_TRIM;
+        private System.Windows.Forms.NumericUpDown HS4_TRIM;
         private System.Windows.Forms.NumericUpDown HS3_TRIM;
         private System.Windows.Forms.NumericUpDown HS2_TRIM;
         private System.Windows.Forms.NumericUpDown HS1_TRIM;
@@ -1387,6 +1487,9 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         private System.Windows.Forms.TextBox H_SV3_POS;
         private System.Windows.Forms.TextBox H_SV2_POS;
         private System.Windows.Forms.TextBox H_SV1_POS;
+        private System.Windows.Forms.CheckBox HS6_REV;
+        private System.Windows.Forms.CheckBox HS5_REV;
+        private System.Windows.Forms.CheckBox HS4_REV;
         private System.Windows.Forms.CheckBox HS3_REV;
         private System.Windows.Forms.CheckBox HS2_REV;
         private System.Windows.Forms.CheckBox HS1_REV;
@@ -1397,8 +1500,6 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         private System.Windows.Forms.BindingSource currentStateBindingSource;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.NumericUpDown HS4_TRIM;
-        private System.Windows.Forms.CheckBox HS4_REV;
         private System.Windows.Forms.CheckBox fbl_modeFBL;
         private System.Windows.Forms.GroupBox groupBox4;
         private Controls.MavlinkNumericUpDown H_COLYAW;

@@ -141,6 +141,8 @@ namespace MissionPlanner.GCSViews.ConfigurationView
                 HS2_REV.Checked = MainV2.comPort.MAV.param["HS2_REV"].ToString() == "-1";
                 HS3_REV.Checked = MainV2.comPort.MAV.param["HS3_REV"].ToString() == "-1";
                 HS4_REV.Checked = MainV2.comPort.MAV.param["HS4_REV"].ToString() == "-1";
+                HS5_REV.Checked = MainV2.comPort.MAV.param["HS5_REV"].ToString() == "-1";
+                HS6_REV.Checked = MainV2.comPort.MAV.param["HS6_REV"].ToString() == "-1";
             }
             catch
             {
@@ -416,7 +418,21 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         {
             if (startup)
                 return;
-            MainV2.comPort.setParam(((CheckBox) sender).Name, ((CheckBox) sender).Checked == false ? 1.0f : -1.0f);
+            MainV2.comPort.setParam(((CheckBox)sender).Name, ((CheckBox)sender).Checked == false ? 1.0f : -1.0f);
+        }
+
+        private void HS5_REV_CheckedChanged(object sender, EventArgs e)
+        {
+            if (startup)
+                return;
+            MainV2.comPort.setParam(((CheckBox)sender).Name, ((CheckBox)sender).Checked == false ? 1.0f : -1.0f);
+        }
+
+        private void HS6_REV_CheckedChanged(object sender, EventArgs e)
+        {
+            if (startup)
+                return;
+            MainV2.comPort.setParam(((CheckBox)sender).Name, ((CheckBox)sender).Checked == false ? 1.0f : -1.0f);
         }
 
         private void HS1_TRIM_ValueChanged(object sender, EventArgs e)
@@ -444,9 +460,22 @@ namespace MissionPlanner.GCSViews.ConfigurationView
         {
             if (startup)
                 return;
-            MainV2.comPort.setParam(((NumericUpDown) sender).Name, (float) ((NumericUpDown) sender).Value);
+            MainV2.comPort.setParam(((NumericUpDown)sender).Name, (float)((NumericUpDown)sender).Value);
         }
 
+        private void HS5_TRIM_ValueChanged(object sender, EventArgs e)
+        {
+            if (startup)
+                return;
+            MainV2.comPort.setParam(((NumericUpDown)sender).Name, (float)((NumericUpDown)sender).Value);
+        }
+
+        private void HS6_TRIM_ValueChanged(object sender, EventArgs e)
+        {
+            if (startup)
+                return;
+            MainV2.comPort.setParam(((NumericUpDown)sender).Name, (float)((NumericUpDown)sender).Value);
+        }
 
         private void GYR_GAIN__Validating(object sender, CancelEventArgs e)
         {
